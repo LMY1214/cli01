@@ -1,59 +1,144 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <div class="ul">
+      <h4>摄影社区热门小镇</h4>
+      <ul>
+        {{
+          arr
+        }}
+        <!-- <li v-for="(item)" in arr>
+          <div class="left">
+            <div><img src="item.img_url" alt="" /></div>
+          </div>
+          <div class="right">
+            <h5>{{ item.tltle }}</h5>
+            <span
+              >成员：<em>{{ item.num1 }}</em></span
+            >
+            <span
+              >作品：<em>{{ item.num2 }}</em></span>
+          </div>
+        </li> -->
+        <!-- <li>
+          <div class="left">
+            <div><img src="../assets/img/pic_01.jpg" alt="" /></div>
+          </div>
+          <div class="right">
+            <h5>风景阻击手</h5>
+            <span>成员：<em>10</em></span>
+            <span>作品：<em>80</em></span>
+          </div>
+        </li>
+        <li>
+          <div class="left">
+            <div><img src="../assets/img/pic_01.jpg" alt="" /></div>
+          </div>
+          <div class="right">
+            <h5>风景阻击手</h5>
+            <span>成员：<em>10</em></span>
+            <span>作品：<em>80</em></span>
+          </div>
+        </li>
+        <li>
+          <div class="left">
+            <div><img src="../assets/img/pic_01.jpg" alt="" /></div>
+          </div>
+          <div class="right">
+            <h5>风景阻击手</h5>
+            <span>成员：<em>10</em></span>
+            <span>作品：<em>80</em></span>
+          </div>
+        </li>
+        <li>
+          <div class="left">
+            <div><img src="../assets/img/pic_01.jpg" alt="" /></div>
+          </div>
+          <div class="right">
+            <h5>风景阻击手</h5>
+            <span>成员：<em>10</em></span>
+            <span>作品：<em>80</em></span>
+          </div>
+        </li>
+        <li>
+          <div class="left">
+            <div><img src="../assets/img/pic_01.jpg" alt="" /></div>
+          </div>
+          <div class="right">
+            <h5>风景阻击手</h5>
+            <span>成员：<em>10</em></span>
+            <span>作品：<em>80</em></span>
+          </div>
+        </li> -->
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String
-  }
-}
+    arr: Array,
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
+* {
   padding: 0;
+  margin: 0;
+}
+.ul {
+  width: 580px;
+  height: 240px;
+  border: 1px solid #000;
+  padding: 10px;
+}
+h4 {
+  margin-bottom: 15px;
 }
 li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+  list-style: none;
+  width: 131px;
+  // background-color: antiquewhite;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  float: left;
+  margin-right: 40px;
+  margin-bottom: 25px;
+  .left {
+    div {
+      width: 50px;
+      height: 50px;
+      padding: 2px;
+      border: 1px solid #000;
+      border-radius: 2px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        margin-right: 10px;
+      }
+    }
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    h5 {
+      font-size: 12px;
+      color: rgb(70, 116, 133);
+      font-weight: normal;
+      margin-bottom: 7px;
+    }
+    span {
+      font-size: 12px;
+      color: rgb(99, 98, 98);
+      em {
+        font-style: normal;
+      }
+    }
+  }
 }
 </style>
